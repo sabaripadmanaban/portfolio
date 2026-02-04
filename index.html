@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Sabari | Professional Accountant Portfolio </title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --crystal-gold: linear-gradient(135deg,
+        #fffbe6 0%,
+        #ffeaa7 18%,
+        #f7d774 32%,
+        #ffffff 45%,
+        #e6b95c 60%,
+        #fff1c1 75%,
+        #fffbe6 100%
+      );
+      --ivory: #fffdf7;
+      --glass-border: rgba(255, 255, 255, 0.45);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--ivory);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* VIDEO BACKGROUND */
+    .video-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* DARK SPARKLY OVERLAY */
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top, rgba(0,0,0,0.4), rgba(0,0,0,0.9)),
+        linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+      z-index: -1;
+    }
+
+    section { padding: 90px 10%; position: relative; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 4rem;
+      letter-spacing: 3px;
+      background: var(--crystal-gold);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: crystalFlow 8s linear infinite;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 28px auto 38px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    @keyframes crystalFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* BUTTON */
+    .btn {
+      padding: 14px 38px;
+      border-radius: 50px;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+      color: #fff;
+      text-decoration: none;
+      margin: 10px;
+      backdrop-filter: blur(16px);
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      color: #000;
+      background: var(--crystal-gold);
+      box-shadow: 0 20px 50px rgba(255,236,160,0.6);
+    }
+
+    /* TITLES */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 55px;
+      background: var(--crystal-gold);
+      background-size: 700% 700%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: crystalFlow 10s linear infinite;
+    }
+
+    /* GLASS */
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(24px);
+      border-radius: 26px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .glass:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(255,236,160,0.4);
+    }
+
+    /* ABOUT */
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+      text-align: center;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* EXPERIENCE */
+    .experience-wrapper {
+      max-width: 980px;
+      margin: auto;
+    }
+
+    .exp-card {
+      padding: 36px;
+    }
+
+    .exp-card h3 {
+      background: var(--crystal-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .exp-card ul {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .exp-card li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      opacity: 0.9;
+    }
+
+    .exp-card li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #ffeaa7;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 35px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skill-card {
+      padding: 32px;
+      text-align: center;
+    }
+
+    .skill-card i {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      background: var(--crystal-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 14px;
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      opacity: 0.65;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.6rem; }
+      section { padding: 70px 6%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- VIDEO BACKGROUND -->
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="background-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Sabari Padmanaban B</h1>
+      <p>
+        A detail-driven accounting professional with 3.5+ years of experience in
+        jewellery retail finance, recognized for delivering financial accuracy, regulatory compliance, and operational efficiency.
+Adept at managing high-value transactions, streamlining billing processes, and ensuring audit-ready financial documentation.
+      </p>
+     <a href="Resume.pdf" class="btn">View Resume</a>
+     <!-- <a href="#contact" class="btn">Contact Me</a> -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2 class="section-title">About Me</h2>
+    <div class="glass about-box">
+      A meticulous and dependable accounting professional with proven expertise in jewellery retail financial operations, GST compliance, and inventory-integrated billing systems. Recognized for exceptional attention to detail while managing complex financial records, high-value transactions, and confidential business data with accuracy and integrity.
+
+Skilled in establishing structured financial controls, improving reporting accuracy, and supporting strategic business decisions through reliable financial insights. Demonstrates a strong commitment to precision, accountability, and operational consistency across all financial processes.
+
+Additionally, possesses foundational technical proficiency in computer hardware maintenance and network infrastructure support. Experienced in ensuring system reliability, maintaining connectivity efficiency, and supporting secure data handling through effective troubleshooting, system configuration, and performance monitoring.
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="experience-wrapper">
+      <div class="glass exp-card">
+        <h3>Accountant — Shanthi Jewellers</h3>
+        <p><em>Retail Finance & Compliance</em></p>
+        <ul>
+          <li>Oversaw complete day-to-day accounting operations including sales tracking, purchase management, and expense monitoring.</li>
+          <li>Executed inventory-linked billing with precise weight-based reconciliation to maintain transaction transparency.</li>
+          <li>Generated GST-compliant invoices and maintained statutory registers in adherence to regulatory standards.</li>
+          <li>Performed detailed bank reconciliation and ledger verification to ensure financial accuracy and discrepancy resolution.</li>
+          <li>Supported internal audit procedures and strengthened financial control mechanisms for improved compliance readiness.</li>
+<li>Maintained confidentiality while handling high-value financial transactions and sensitive business data.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2 class="section-title">Skills & Expertise</h2>
+    <div class="skills-grid">
+      <div class="glass skill-card"><i class="fas fa-calculator"></i><p>Tally ERP / Prime</p></div>
+      <div class="glass skill-card"><i class="fas fa-table"></i><p>Advanced MS Excel & Financial Analysis</p></div>
+      <div class="glass skill-card"><i class="fas fa-file-invoice"></i><p>GST Filing & Compliance</p></div>
+      <div class="glass skill-card"><i class="fas fa-box"></i><p>Inventory & Stock Accounting</p></div>
+      <div class="glass skill-card"><i class="fas fa-university"></i><p>Bank Reconciliation & Ledger Scrutiny</p></div>
+      <div class="glass skill-card"><i class="fas fa-receipt"></i><p>Billing Systems & Invoice Management</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Financial Reporting & Data Accuracy</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Financial Record Maintenance & Audit Support</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Transaction Verification & Error Resolution</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Hardware Installation & Troubleshooting</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Network Infrastructure & Connectivity</p></div>
+<div class="glass skill-card"><i class="fas fa-receipt"></i><p>Data Backup & System Security</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Open to professional opportunities in accounting, finance operations, and compliance management. Available to contribute financial expertise that supports business growth and operational efficiency.</p>
+    <a href="mailto:sabaripadhmanaban12@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="tel:9677148091"><i class="fas fa-phone"></i></a>
+<a href="https://www.linkedin.com/in/sabari-padmanaban"
+     target="_blank"
+     style="color:#fff; font-size:1.3rem;">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  </section>
+
+  <footer>© Sabari | Accountant Portfolio</footer>
+
+</body>
+</html>
